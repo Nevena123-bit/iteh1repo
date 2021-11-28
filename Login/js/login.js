@@ -17,8 +17,13 @@ $(document).ready(function(){
       
        req.done(function(res,textStatus,responseXML){
           
-           console.log(res);
-    
+        if(res==1){
+         window.location.replace("http://localhost/ItehDomaci/e/MainScreen/")
+
+        }
+        else{
+            alert("Niste registrovani");
+        }
           
        });
       
