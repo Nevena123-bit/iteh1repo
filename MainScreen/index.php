@@ -15,7 +15,7 @@ $reziseri=$filmContorl->filmovi;
 <script src="js/main.js"></script>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="styleDialog.css">
+
     <link rel="stylesheet" href="products.css">
     <link rel="stylesheet" href="../Login/css/main.css">
 
