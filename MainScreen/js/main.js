@@ -46,7 +46,28 @@ $(document).ready(function(){
    
   
  
-
+    $('.SearchText').on('input',function(e){
+        let text=$('.SearchText').val();
+        req=$.ajax({
+            url: 'Handlers/SearchData.php',
+            type: 'POST',
+            data:{'SearchText':text},
+           
+        });
+        req.done(function(r){
+            $('#Content').html(r);
+    
+        })
+        });
+        $(".addDugme").click(function(){
+           
+          
+           
+           
+           // $(".save").addClass("AddMe");
+            //showDialog();
+           
+        });
  
 
 
