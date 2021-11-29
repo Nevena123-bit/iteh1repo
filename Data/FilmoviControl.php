@@ -35,7 +35,7 @@ class FilmoviControl{
         if(Database::getInstance()->conn->query($query)) return 1;
          return -1;
    }
-   function deleteGrad($id){
+   function DeleteFilm($id){
        $query="DELETE FROM film WHERE FilmID='$id'";
        if(Database::getInstance()->conn->query($query)) return 1;
         return -1;

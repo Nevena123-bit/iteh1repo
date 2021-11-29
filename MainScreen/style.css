@@ -2,6 +2,52 @@
 body{
     height: 100vh;
     background: rgb(250, 226, 217);
+ 
+}
+.Containter{
+    display: flex;
+    flex-direction: column;
+   
+}
+.Lbl{
+    color:white;
+}
+.Dialog.active{
+    transform:  translate(-50%,-50%) scale(1);
+
+}
+.Dialog{
+   width: 30%;
+   height: 500px;
+   position: absolute;
+   left: 0; 
+   right: 0; 
+   top: 20%;
+   margin-left: auto; 
+   margin-right: auto; 
+   border-radius: 25px;
+   padding: 20px;
+   background: #9152f8;
+  background: -webkit-linear-gradient(bottom, #7579ff, #b224ef);
+  background: -o-linear-gradient(bottom, #7579ff, #b224ef);
+  background: -moz-linear-gradient(bottom, #7579ff, #b224ef);
+  background: linear-gradient(bottom, #7579ff, #b224ef);
+  transform:  translate(-50%,-50%) scale(0);
+  transition:  200ms ease-in-out;
+z-index: 10;
+
+}
+.Ele{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+}
+.loginValidate{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .SearchText{
 
@@ -14,10 +60,10 @@ body{
 }
 .TopHeader{
 
-
     background-color: white;
+   
    height:120px;
-    flex:1;
+ 
   display: flex;
   justify-content: center;
 align-items: center;
@@ -69,6 +115,6 @@ border-bottom-right-radius: 40px;
 }
 .BodyMain{
     padding-top: 100px;
-    flex: 2;
+ 
   
 }
