@@ -35,25 +35,30 @@ $reziseri=$filmContorl->filmovi;
         <img src="res/searching.png" class="SerchIcon">
         <input class="SearchText" type="text" placeholder="Search">
         </div>
+        <button class="login100-form-btn addDugme">
+							Add
+        </button>
     </div>
 
+    
+    
 
-
+    <div class="bcg"></div>
     <div class="Dialog">
-    <form class="login100-form validate-form loginValidate">
+   
 				
-    <span class="login100-form-title p-b-34 p-t-27">
-					Ubaci Film
-					</span>
+                    <span class="login100-form-title p-b-34 p-t-27">
+                                    Ubaci Film
+                    </span> 
 				
 					<div class="wrap-input100 " >
-						<input class="input100" type="text" name="FilmIme" placeholder="Ime">
+						<input class="input100" type="text" name="FilmIme" id="FilmIme" placeholder="Ime">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
                     <div class="Ele">
 
                     <label class="Lbl" for="DatumPrikazivanja">Datum Prikazivanja </label><br>
-                        <input type="date" id="start" name="DatumPrikazivanja"
+                        <input type="date" id="DatumPrikazivanja" name="DatumPrikazivanja"
                              value="2018-07-22"
                                 min="2018-01-01" max="2025-12-31">
                     </div>
@@ -61,7 +66,7 @@ $reziseri=$filmContorl->filmovi;
 
                 <div class="Ele">
                    <label  class="Lbl" for="Reziseri">Reziser </label><br>
-                          <select name="Reziseri" id="cars">
+                          <select name="Reziseri" id="Reziser">
                                 <option value="volvo">Volvo</option>
                                 <option value="saab">Saab</option>
                                 <option value="mercedes">Mercedes</option>
@@ -70,14 +75,17 @@ $reziseri=$filmContorl->filmovi;
                 </div>
 
 
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+					<div class="buttonContainer">
+                    <button class="login100-form-btn save">
 							Save
+						</button>
+                        <button class="login100-form-btn close">
+							Close
 						</button>
 					</div>
 
 					
-				</form>
+			
 
     </div>
 
