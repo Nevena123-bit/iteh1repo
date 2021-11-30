@@ -3,7 +3,7 @@ require 'Database.php';
 class FilmoviControl{
     private static  $instance=null;
     public $res ;
-    public $filmovi;
+    public $reziseri;
     public $searchRes;
 
    private function __construct()
@@ -20,16 +20,16 @@ class FilmoviControl{
    public function getAllReziseri()
    {
        $query="SELECT * from reziser";
-       $this->filmovi=Database::getInstance()->conn->query($query);
+       $this->reziseri=Database::getInstance()->conn->query($query);
        
    }
    function InsertFilm($Ime,$DatumPrikazivanja,$RaziserID){
-       $query ="INSERT INTO grad(Ime,DatumPrikazivanja,RezisedID) VALUES('$Ime','$DatumPrikazivanja','$RaziserID')";
+       $query ="INSERT INTO film(Ime,DatumPrikazivanja,RezisedID) VALUES('$Ime','$DatumPrikazivanja','$RaziserID')";
        if(Database::getInstance()->conn->query($query)) return 1;
         return -1;
    }
    function UpdateFilm($id,$ime,$DatumPrikazivanja,$RaziserID){
-       $query="UPDATE grad SET
+       $query="UPDATE film SET
         Ime='$ime',DatumPrikazivanja='$DatumPrikazivanja',RezisedID='$RaziserID'
         WHERE FilmID='$id'";
         if(Database::getInstance()->conn->query($query)) return 1;

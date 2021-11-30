@@ -3,8 +3,9 @@ require '../Data/FilmoviControl.php';
 $filmContorl=FilmoviControl::getInstance();
 //$productContorl->getAllGradovi();
 $filmContorl->getAllFilmovi();
+$filmContorl->getAllReziseri();
 $result=$filmContorl->res;
-$reziseri=$filmContorl->filmovi;
+$reziseri=$filmContorl->reziseri;
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +51,7 @@ $reziseri=$filmContorl->filmovi;
                     <span class="login100-form-title p-b-34 p-t-27">
                                     Ubaci Film
                     </span> 
-				
+                    <form id="form">
 					<div class="wrap-input100 " >
 						<input class="input100" type="text" name="FilmIme" id="FilmIme" placeholder="Ime">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
@@ -66,17 +67,22 @@ $reziseri=$filmContorl->filmovi;
 
                 <div class="Ele">
                    <label  class="Lbl" for="Reziseri">Reziser </label><br>
-                          <select name="Reziseri" id="Reziser">
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="mercedes">Mercedes</option>
-                                <option value="audi">Audi</option>
-                        </select>
+                   <select class="combobox" name="Reziseri" id="Reziser">
+                   <?php while($r=$reziseri->fetch_array()):?>
+                        
+                    <option  value=<?php echo $r['ReziserID']; ?>><?php echo $r['Ime'];?></option>
+
+
+
+                    <?php endwhile;?>
+                    </select>
+                   
+                   </form>
                 </div>
 
 
 					<div class="buttonContainer">
-                    <button class="login100-form-btn save">
+                    <button class="login100-form-btn save" onclick="Resolve()">
 							Save
 						</button>
                         <button class="login100-form-btn close">

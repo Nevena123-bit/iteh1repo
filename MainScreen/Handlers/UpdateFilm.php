@@ -1,11 +1,13 @@
 <?php
 require '../../Data/FilmoviControl.php';
-    $searchText=$_POST['SearchText'];
-    $instanca=FilmoviControl::getInstance();
-    $dalijeuspenso=$instanca->searchData($searchText);
+$id=$_POST['id'];
+$FilmName=$_POST['FilmIme'];
+$DatumPrikazivanje=$_POST['DatumPrikazivanja'];
+$ReziserID=$_POST['Reziseri'];
+$instanca=FilmoviControl::getInstance();
 $data="";
-
-
+$instanca->UpdateFilm($id,$FilmName,$DatumPrikazivanje,$ReziserID);
+$instanca->searchData("");
 while($instanca->res!=null && $r=$instanca->res->fetch_array()){
     $data.='  
     <div class="card mx-auto col-md-3 col-10 mt-5"> 

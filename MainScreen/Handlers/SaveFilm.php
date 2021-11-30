@@ -1,14 +1,16 @@
 <?php
 require '../../Data/FilmoviControl.php';
-    $searchText=$_POST['SearchText'];
-    $instanca=FilmoviControl::getInstance();
-    $dalijeuspenso=$instanca->searchData($searchText);
+$FilmName=$_POST['FilmIme'];
+$DatumPrikazivanje=$_POST['DatumPrikazivanja'];
+$ReziserID=$_POST['Reziseri'];
+$instanca=FilmoviControl::getInstance();
+$instanca->InsertFilm($FilmName,$DatumPrikazivanje,$ReziserID);
+$instanca->searchData("");
+
 $data="";
 
 
 while($instanca->res!=null && $r=$instanca->res->fetch_array()){
-    
-
     $data.='  
     <div class="card mx-auto col-md-3 col-10 mt-5"> 
     <img class="mx-auto img-thumbnail" src="res/filmImg.jpg" width="600px" height="50%" />
@@ -22,7 +24,7 @@ while($instanca->res!=null && $r=$instanca->res->fetch_array()){
             <br>
             <div id="Buttons">
             <button class="login100-form-btn button deleteDugme"  id="ButtonFunc"  onclick="DeleteClicked( '.$r['FilmID'].');" >Delete</button>
-            <button class="login100-form-btn button updateDugme"  id="ButtonFunc"  onclick=" UpdateClicked('.$r['FilmID'].',\''.$r['DatumPrikazivanja'].'\','.$r['ReziserID'].',\''.$r['ImeFilma'].'\')">Update</button>
+            <button class="login100-form-btn button updateDugme"  id="ButtonFunc"  onclick=" UpdateClicked('.$r['FilmID'].','.$r['DatumPrikazivanja'].','.$r['ReziserID'].',\''.$r['ImeFilma'].'\')">Update</button>
 
             </div>
         </div>
